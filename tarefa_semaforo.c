@@ -29,7 +29,7 @@ bool repeating_timer_callback_3S(struct repeating_timer *t)
         gpio_put(led_vermelho, false);
         gpio_put(led_amarelo, true);
         gpio_put(led_verde, false);
-        printf("LED azul ligado\n");
+        printf("LED amarelo ligado\n");
         contador++;
         break;
     case 3:
