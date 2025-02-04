@@ -1,5 +1,8 @@
 Para utiliza-lo, basta clonar o repositorio, compilar o arquivo "tarefa_semaforo.c" e executa-lo a partir do "diagram.json" - simulador Wokwi.
 
+Visualize tambem pelo site:
+https://wokwi.com/projects/421916342845260801
+
 🚦 Temporizador Periódico – Semáforo com Raspberry Pi Pico W
 
 Este projeto implementa um semáforo utilizando um Raspberry Pi Pico W, empregando a função add_repeating_timer_ms() do Pico SDK para gerenciar a temporização.
