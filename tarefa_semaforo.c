@@ -2,9 +2,9 @@
 #include "pico/stdlib.h"    // Inclui a biblioteca padrão para funcionalidades básicas como GPIO, temporização e comunicação serial.
 #include "hardware/timer.h" // Inclui a biblioteca para gerenciamento de temporizadores de hardware.
 
-#define LED_PIN_RED 11
-#define LED_PIN_YELLOW 12
-#define LED_PIN_GREEN 13
+#define led_vermelho 11
+#define led_azul 12
+#define led_verde 13
 bool led_on = false;
 
 int contador = 1;
@@ -19,21 +19,21 @@ bool repeating_timer_callback_3S(struct repeating_timer *t)
     switch (contador)
     {
     case 1:
-        gpio_put(LED_PIN_RED, true);
-        gpio_put(LED_PIN_YELLOW, false);
-        gpio_put(LED_PIN_GREEN, false);
+        gpio_put(led_vermelho, true);
+        gpio_put(led_azul, false);
+        gpio_put(led_verde, false);
         contador++;
         break;
     case 2:
-        gpio_put(LED_PIN_RED, false);
-        gpio_put(LED_PIN_YELLOW, true);
-        gpio_put(LED_PIN_GREEN, false);
+        gpio_put(led_vermelho, false);
+        gpio_put(led_azul, true);
+        gpio_put(led_verde, false);
         contador++;
         break;
     case 3:
-        gpio_put(LED_PIN_RED, false);
-        gpio_put(LED_PIN_YELLOW, false);
-        gpio_put(LED_PIN_GREEN, true);
+        gpio_put(led_vermelho, false);
+        gpio_put(led_azul, false);
+        gpio_put(led_verde, true);
         contador = 1;
         break;
     }
@@ -58,12 +58,12 @@ int main()
     stdio_init_all();
 
     // Inicializar o pino GPIO11
-    gpio_init(LED_PIN_RED);
-    gpio_set_dir(LED_PIN_RED, true);
-    gpio_init(LED_PIN_YELLOW);
-    gpio_set_dir(LED_PIN_YELLOW, true);
-    gpio_init(LED_PIN_GREEN);
-    gpio_set_dir(LED_PIN_GREEN, true);
+    gpio_init(led_vermelho);
+    gpio_set_dir(led_vermelho, true);
+    gpio_init(led_azul);
+    gpio_set_dir(led_azul, true);
+    gpio_init(led_verde);
+    gpio_set_dir(led_verde, true);
 
     // Declaração de uma estrutura de temporizador de repetição.
     // Esta estrutura armazenará informações sobre o temporizador configurado.
